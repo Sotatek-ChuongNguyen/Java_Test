@@ -46,6 +46,7 @@ public class RetailServiceImpl implements RetailService {
     }
 
     @Scheduled(cron = "0 0 0 * * ?")
+    @Override
     public void checkValue() {
         float totalRevenue = 0;
         List<Order> orderList = orderRepository.findAll();

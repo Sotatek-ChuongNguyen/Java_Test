@@ -8,4 +8,6 @@ public interface RetailService {
 
     void addNewQuantityForOldProduct(int productId, int quantity);
 
+    void checkValue();
+
 }

@@ -40,4 +40,15 @@ public class RetailResource {
         }
     }
 
+    @PutMapping("/active-check-func")
+    public ResponseEntity<?> activeCheckFunction(){
+        try{
+            retailService.checkValue();
+            return ResponseEntity.ok().body(new ApiResponse<>(null, null));
+        }catch (Exception e){
+            e.printStackTrace();
+            return ResponseEntity.badRequest().body(new ApiResponse<>(null, ErrorConstant.ERR_000));
+        }
+    }
+
 }
